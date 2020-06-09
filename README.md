@@ -21,7 +21,7 @@ Application  [DemoWebShop](http://demowebshop.tricentis.com/) is tested for Logi
 
     [Register.robot](https://github.com/robinch93/RobotFramework-Python/blob/master/TestCases/TC2_REGISTER.robot)
 
-    [Custum Library](https://github.com/robinch93/RobotFramework-Python/tree/master/Resources/CustomLib.py)
+    [CustomLibrary.py](https://github.com/robinch93/RobotFramework-Python/tree/master/Resources/CustomLib.py)
 
 
 All the required locators are put in separate [Elements](https://github.com/robinch93/RobotFramework-Python/blob/master/Resources/Elements.py) file for easy access. 
