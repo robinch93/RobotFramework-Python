@@ -15,15 +15,15 @@ Application  [DemoWebShop](http://demowebshop.tricentis.com/) is tested for Logi
 
 - Login Feature: This feature is tested for valid and invalid credentials by writing keywords in the same robot file. 
 
-[TC1_lOGIN.robot](https://github.com/robinch93/RobotFramework-Python/blob/master/TestCases/TC1_LOGIN.robot)
+    [Login.robot](https://github.com/robinch93/RobotFramework-Python/blob/master/TestCases/TC1_LOGIN.robot)
 
 - Registration Feature: This feature is tested for new and existing users by creating a custom python library, by importing standard robot framework libraries like BuiltIn, String, SeleniumLibrary. 
 
-[TC2_REGISTER.robot](https://github.com/robinch93/RobotFramework-Python/blob/master/TestCases/TC2_REGISTER.robot)
+    [Register.robot](https://github.com/robinch93/RobotFramework-Python/blob/master/TestCases/TC2_REGISTER.robot)
 
-[Custum Library](https://github.com/robinch93/RobotFramework-Python/tree/master/Resources/CustomLib.py)
+    [Custum Library](https://github.com/robinch93/RobotFramework-Python/tree/master/Resources/CustomLib.py)
 
 
-All the required locators are put in separate [Locators](https://github.com/robinch93/RobotFramework-Python/blob/master/Resources/Elements.py) file for easy access. 
+All the required locators are put in separate [Elements](https://github.com/robinch93/RobotFramework-Python/blob/master/Resources/Elements.py) file for easy access. 
 
 
