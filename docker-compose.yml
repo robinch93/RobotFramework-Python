@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  robot:
+    build: .
+    container_name: robot
+    command: tail -f /dev/null
+    command: sh -c "python -m http.server 7000"
+    working_dir: /script
+    volumes:
+      - .:/script
+    ports:
+      - 8505:7000
