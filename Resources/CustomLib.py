@@ -1,11 +1,6 @@
 from random import randint
-
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.firefox import GeckoDriverManager
-from webdriver_manager.microsoft import IEDriverManager
-
+from selenium.webdriver.chrome.options import Options
 from robot.libraries.BuiltIn import BuiltIn
-from robot.libraries.String import String
 from robot.api.deco import keyword
 from robot.api import logger
 
@@ -24,21 +19,14 @@ class CustomLib(object):
         recievedMsg = self.sl.get_text(locator)
         self.built.should_be_equal_as_strings(recievedMsg, expectedMsg)
         logger.info(recievedMsg)
-
-    @keyword("Get Driver Path")
-    def get_Chromedriver_Path(self, browser):
-        if browser.casefold() == 'chrome'.casefold():
-            driver_path = ChromeDriverManager().install()
-        elif browser.casefold() == 'firefox'.casefold():
-            driver_path = GeckoDriverManager().install()
-        elif browser.casefold() == 'ie'.casefold():
-            driver_path = IEDriverManager().install()
-        
-        return(driver_path)
     
     @keyword("Start Browser Window")
-    def start_browser_window(self, url, browserName):
-        self.sl.open_browser(url, browserName)
+    def start_browser_window(self, url):
+        options = Options()
+        options.add_argument('--no-sandbox')
+        options.add_argument('--headless')
+        options.add_argument('--disable-dev-shm-usage')
+        self.sl.open_browser(url = url, browser = 'chrome', options = options, executable_path = '/usr/local/bin/chromedriver')
         self.sl.maximize_browser_window
     
     @keyword("Click Register Link")

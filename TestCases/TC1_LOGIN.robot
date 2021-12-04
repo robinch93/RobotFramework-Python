@@ -1,12 +1,11 @@
 ***Settings***
 Library  SeleniumLibrary
 Library  ../Resources/Locators.py
+Library  ../Resources/CustomLib.py
 Variables  ../Resources/Elements.py
-Test Setup  Start Browser and Maximize
 Test Teardown  Close Browser window 
 
 ***Variables***
-${browser}  firefox
 ${url}  http://demowebshop.tricentis.com/
 ${valid_email}  randyorton@gmail.com
 ${valid_password}  test2020
@@ -18,8 +17,9 @@ ${invalid_password}  invalid
 ***Test Cases***
 
 TestCase1: Login Valid Credentials
-    [Documentation]  This is to verify valid login to demo web shop
+    [Documentation]  Verify valid login to demo web shop
     [Tags]  integration
+        Start Browser Window    ${url}
         Click Login Link
         Input Email  ${valid_email}
         Input Password  ${valid_password}
@@ -27,8 +27,9 @@ TestCase1: Login Valid Credentials
         Welcome Message Validation
         
 TestCase2: Login Invalid Credentials
-    [Documentation]  This is to verify invalid login to demo web shop
+    [Documentation]  Verify invalid login to demo web shop
     [Tags]  integration
+        Start Browser Window    ${url}
         Click Login Link
         Input Email     ${invalid_email}
         Input Password  ${invalid_password}
@@ -36,10 +37,6 @@ TestCase2: Login Invalid Credentials
         Unsuccessful Login Warning
 
 ***Keywords***
-Start Browser and Maximize
-    Open Browser    ${url}   ${browser}
-    maximize browser window
-
 Click Login Link
     page should contain link  ${LoginLink_Loc}
     click link  ${LoginLink_Loc}

@@ -6,19 +6,17 @@ Library  ../Resources/Locators.py
 Variables  ../Resources/Elements.py
 
 ***Variables***
-${browser}  firefox
 ${url}  http://demowebshop.tricentis.com/
 ${firstname}  john
 ${lastname}  cena
 ${gender}  M
 ${existing_email}  randyorton@gmail.com 
 
-
 ***Test Cases***
 TestCase1: Register New User
     [Documentation]  Verify Registration of new user on demo web shop
     [Tags]  integration
-    [Setup]         Start Browser Window    ${url}  ${browser} 
+    [Setup]         Start Browser Window    ${url}
         Click Register Link     ${RegisterLink_Loc}
         Select Gender Radiobutton  Gender  ${gender}
         Input First Name            ${FirstName_Loc}        ${firstname}
@@ -29,12 +27,12 @@ TestCase1: Register New User
         Click Register Button       ${RegisterButton_Loc}
         Register Page Title         ${Register_Page_Title}
         Success Register Message    ${ResgisterMsg_Loc}     ${success_register_msg}
-    [Teardown]        Close Browser Window
+    [Teardown]        close browser
 
 TestCase2: Register Existing User
     [Documentation]  Verify Registration of existing user on demo web shop
     [Tags]  integration
-    [Setup]         Start Browser Window    ${url}  ${browser}
+    [Setup]         Start Browser Window    ${url}
         Click Register Link     ${RegisterLink_Loc}
         Select Gender Radiobutton  Gender  ${gender}
         Input First Name        ${FirstName_Loc}    ${firstname}
@@ -45,9 +43,8 @@ TestCase2: Register Existing User
         Click Register Button   ${RegisterButton_Loc}
         sleep  3
         Email Exist Error       ${EmailExist_Loc}   ${Email_Exist_Error}     
-    [Teardown]        Close Browser Window
+    [Teardown]        close browser
 
-***Keywords***
 
 
 
