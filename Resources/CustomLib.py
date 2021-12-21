@@ -24,7 +24,7 @@ class CustomLib(object):
     def start_browser_window(self, url):
         options = Options()
         options.add_argument('--no-sandbox')
-        options.add_argument('--headless')
+#        options.add_argument('--headless')
         options.add_argument('--disable-dev-shm-usage')
         self.sl.open_browser(url = url, browser = 'chrome', options = options, executable_path = '/usr/local/bin/chromedriver')
         self.sl.maximize_browser_window
